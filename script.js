@@ -29,12 +29,25 @@ form?.addEventListener('submit', event => {
   note.textContent = 'Your email app should open with your inquiry. Please send the message from there.';
 });
 
-if ('scrollRestoration' in history) {
-  history.scrollRestoration = 'manual';
+/* Start homepage at the top, including after layout loads */
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
 }
 
-window.addEventListener('pageshow', () => {
-  if (!window.location.hash) {
+function resetHomeScroll() {
+  const hash = window.location.hash;
+
+  // Preserve intentional links to FAQ, pilot, contact, etc.
+  if (hash && hash !== "#top") return;
+
+  document.documentElement.style.scrollBehavior = "auto";
+  window.scrollTo(0, 0);
+
+  requestAnimationFrame(() => {
     window.scrollTo(0, 0);
-  }
-});
+    document.documentElement.style.scrollBehavior = "";
+  });
+}
+
+window.addEventListener("pageshow", resetHomeScroll);
+window.addEventListener("load", resetHomeScroll);
