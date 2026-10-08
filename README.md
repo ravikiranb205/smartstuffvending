@@ -1,25 +1,21 @@
-# SmartStuff vending landing page
+# SmartStuff — Premium Website V2
 
-A simple static, mobile-first site to introduce the SmartStuff local vending pilot to prospective host locations. No framework, build tools or backend required.
+A responsive single-page static landing site for prospective Southeast Michigan vending locations.
 
-## Publish with GitHub Pages
+## How to replace the live GitHub Pages site
 
-1. On GitHub, open **Settings → Pages**.
-2. Select **Deploy from a branch**, branch **main**, folder **/(root)**, then **Save**.
-3. Once deployed, GitHub Pages will use `https://ravikiranb205.github.io/smartstuffvending/`.
+1. Go to https://github.com/ravikiranb205/smartstuffvending
+2. Upload/replace `index.html`, `styles.css`, `script.js`, `favicon.svg`, and `README.md` in the repository root.
+3. Upload the **assets** folder, containing `machine-concept.jpg` and `brand-reference.jpg`. Folder structure matters.
+4. Commit to `main`. GitHub Pages will republish automatically.
 
-## IMPORTANT: Enable the contact form
+## Before sharing with prospects
 
-The page intentionally **does not collect or transmit leads until you set an inbox**. In `script.js`, set `CONTACT_EMAIL` to an address you control. The form then opens visitors' email apps with a prefilled inquiry. This is not a backend lead-capture service; users must press Send in their email app. For a more seamless form, connect a trusted form service later and update the copy/privacy notice accordingly.
+- Set `CONTACT_EMAIL` near the beginning of `script.js` to your verified business inbox. The form opens the visitor's email app; there is no backend or automated submission.
+- **Hero machine photo is a concept branded with the previous Good Stuff identity**. It is labeled as concept imagery. Replace with an authentic SmartStuff photograph when ready.
+- Card/tap payment is described as *planned* until verified operational.
+- Review 60-day pilot legal/insurance/placement terms before making an offer.
+- The name SmartStuff has not been cleared by a trademark attorney.
+- The category graphics are abstract editorial elements, not guaranteed product inventory.
 
-## Before offering pilots
-
-- Confirm the name is clear to use (early web screening is not trademark clearance).
-- Replace the CSS machine illustration with a real photo when the machine is ready.
-- Verify that $0 standard equipment/installation/maintenance promises match your real host agreement and economics.
-- Keep a simple written pilot agreement covering power, placement, access, restocking, insurance, removal and duration.
-- Confirm card/tap functionality and refrigeration before claiming those are live operational capabilities.
-
-## Local preview
-
-Open `index.html` directly in a browser, or run `python3 -m http.server` in this folder.
+No framework or build pipeline is required. Open index.html in a browser to preview.
