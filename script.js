@@ -28,3 +28,13 @@ form?.addEventListener('submit', event => {
   location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
   note.textContent = 'Your email app should open with your inquiry. Please send the message from there.';
 });
+
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+window.addEventListener('pageshow', () => {
+  if (!window.location.hash) {
+    window.scrollTo(0, 0);
+  }
+});
